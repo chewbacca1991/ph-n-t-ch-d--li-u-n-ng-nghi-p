@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 
 // Kết nối tới cơ sở dữ liệu MongoDB
-mongoose.connect('mongodb://localhost:27017/nongnghiep', { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoURI = 'mongodb://localhost:27017/nongnghiep';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Kết nối thành công tới MongoDB!'))
   .catch(err => console.error('Không thể kết nối tới MongoDB:', err));
 
